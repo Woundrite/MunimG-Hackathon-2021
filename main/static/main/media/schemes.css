@@ -1,0 +1,132 @@
+			
+.colorlink {
+color: rgb(43, 51, 43);
+background-color: transparent;
+text-decoration: none;}
+	
+
+
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+.contain {
+  padding: 2px 16px;
+}
+
+.btn-hover{
+	background-color: "whitesmoke"!important;
+	opacity: 0.5;
+}
+
+.webtitle{
+    
+    width: 100%;
+    height: 30%;
+    background-color:  #0078c9 ;
+    display: inline-flex;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+    color: whitesmoke;
+    font-size: 40px;
+    font-weight: bold;
+    top: 60%;
+    padding: 20px;
+    padding-top: 60px;
+    background-image: url("../med/doodle.jpg");
+    background-size: cover;
+    margin-bottom: 0px;
+;
+}
+
+.exptable{
+    width:50%;
+    
+}
+
+.collapsible {
+  background-color:#3067f0;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #2957ca;
+
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1a2;
+  margin-bottom: 10px;
+  border: 2px, #2957ca;
+}
+
+.n-animated{
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 1s;
+}
+.n-animated.n-done{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.panelimg
+{
+float: left; 
+height: 25%; 
+margin: 10px; 
+}
+
+.panelmiddle{
+    display: grid;
+    /* align-items: center; */
+    justify-content: center;
+
+}
+.panel{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    width: 75%;
+    padding-left: auto;
+    padding-right: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+.panel:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #1353f7;
+}
+
+.backcolor{
+    background-color: whitesmoke ;
+    width: auto;
+    height: auto;
+    background-size: auto;
+    padding: 0%;
+    margin: 0%;
+}
+
+	

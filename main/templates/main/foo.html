@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUNIMg</title>
+</head>
+
+<body>
+
+    <canvas id="myChart" class="myChart" style="width:100%; margin-bottom: 5vh;"></canvas>
+    <canvas id="myChart1" class="myChart" style="width:100%; margin-bottom: 5vh;"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script>
+        new Chart(document.getElementById("myChart"), {
+            type: 'line',
+            data: {
+                labels: [1, 2],
+                datasets: [{
+                    data: [3478.05, {{ AMZN }}],
+                label: "Amazon",
+                borderColor: "#20fc8f",
+                fill: true
+            }, {
+            data: [154.30, {{ AAPL }}],
+            label: "Apple",
+            borderColor: "#5762d5",
+            fill: true
+                }, {
+                data: [376.26, {{ FB }}],
+            label: "Face Book",
+            borderColor: "#95b8d1",
+            fill: true
+                }, {
+                data: [2874.79, {{ GOOGL }}],
+            label: "Google",
+            borderColor: "#ff9505",
+            fill: true
+                }, {
+                data: [733.57, {{ TSLA }}],
+            label: "Tesla",
+            borderColor: "#ab4967",
+            fill: true
+                }]
+            },
+            options: {
+            title: {
+                display: true,
+                text: 'Monthly Expenditure'
+            }
+        }
+        });
+
+        new Chart(document.getElementById("myChart1"), {
+            type: 'line',
+            data: {
+                labels: [1, 2],
+                datasets: [{
+                    data: [1.27, {{ ADA }}],
+                label: "ADA",
+                borderColor: "#20fc8f",
+                fill: true
+            }, {
+            data: [49987.42, {{ BTC }}],
+            label: "BTC",
+            borderColor: "#5762d5",
+            fill: true
+                    }, {
+                data: [0.300228, {{ DOGE }}],
+            label: "DOGE",
+            borderColor: "#95b8d1",
+            fill: true
+                    }, {
+                data: [3898.41, {{ ETH }}],
+            label: "ETH",
+            borderColor: "#ff9505",
+            fill: true
+                    }]
+                },
+            options: {
+            title: {
+                display: true,
+                text: 'Monthly Expenditure'
+            }
+        }
+        });
+    </script>
+</body>
+
+</html>

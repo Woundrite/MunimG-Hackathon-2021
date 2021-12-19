@@ -1,0 +1,330 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MUNIMg</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/media/bootstrap.css' %}" !important>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/font-awesome/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <script src="{% static 'main/media/js/jquery.data-parallax.js' %}"> </script>
+    <script src="{% static 'main/media/js/scroller.js' %}"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'main/media/index.css' %}">
+<!-- <link rel="stylesheet" type="text/css" href="main/media/waves.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'main/media/particle.css' %}"> -->
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-fixed-top navbar-header" id="upscroll" style="background-color: rgb(255, 255, 255); color: black ;">
+		<div class="container">
+    			<div class="navbar-header colorlink">
+    				<a href="/" class="navbar-brand"><img src= "{% static 'main/media/med/M.png' %}" style="width:130%; padding:0px; margin: 0px; height:150%;" >
+    				</a>
+    			</div>
+    			<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>  
+					<li><a href="/personal_finance/">Personal Finance</a></li>			        
+    				<li><a href="/schemes">Schemes</a></li>
+    				<li><a href="#">News</a></li>
+					<li><a href="#">Schemes</a></li>
+					<li><a href="#">Advice</a></li>
+    				
+    				
+    			</ul>
+    			<ul class="nav navbar-nav navbar-right">
+    				<li><a href="/login">Login</a></li>
+    				<li><a href="/register">Sign Up</a></li>
+    			</ul>
+
+		</div>
+	</nav>
+    </div>
+    <div class="w3-animate-opacity">
+
+
+        <div class="heroimg">
+            <div class="bottom">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255, 255, 255, 0.7)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255, 255, 255, 0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 255, 255, 0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(255,255,255)" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="front">
+                <img src="{% static 'main/media/med/MMWhite.png' %}" alt="" style="width: 50%; height:25%;">
+            </div>
+
+        </div>
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="container">
+
+            
+
+            <div class="card n-animated">
+                <img src="{% static 'main/media/med/fintrack.jpg' %}" alt="Avatar" style="width:100%; height: 165px">
+                <div class="contain">
+                    <h4><b>Personal Finance Tracker</b></h4>
+                    <p>Tired of not ‘Excel’-ing in tracking your finances? No sweat, MUNIMg provides you with
+                        your own personalized tracking interface which helps you keep a check on your monthly finances
+                        and ultimately lead a calculated life.</p>
+
+                    <br>
+                    <br>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1"
+                        style="background-color: white; color:#3067f0; border-color: #3067f0; margin-bottom: 15px;">Read
+                        more</button>
+
+
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Personal Finance Tracker</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Tired of not ‘Excel’-ing in tracking your finances? No sweat, MUNIMg provides you with
+                                your own personalized tracking interface which helps you keep a check on your monthly
+                                finances
+                                and ultimately lead a calculated life. With an easy interface, MUNIMg takes away the
+                                tussle of
+                                personally crunching numbers into an Excel sheet. Come check out all your saving,
+                                expenditure
+                                and income trends at the expense of a single click!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card n-animated ">
+                <img src="{% static 'main/media/med/investtrack.jpg' %}" alt="Avatar" style="width:100%; height: 165px">
+                <div class="contain">
+                    <h4><b>Investment Portfolio</b></h4>
+                    <p>Elon been giving you FOMO? Must be hard to not know where to direct your money when the world is
+                        evolving faster than you can say X Æ A-12. Look no further though, MUNIMg provides you can say X
+                        Æ A-12.
+                        Look no further though, MUNIMg provides you an insight into the profits of...</p>
+
+
+                    <br>
+                    <br>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal2"
+                        style="background-color: white; color:#3067f0; border-color: #3067f0; margin-bottom: 15px; ">Read
+                        more</button>
+                    <br>
+
+
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal2" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Investment Portfolio</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Elon been giving you FOMO? Must be hard to not know where to direct your money when the
+                                world is
+                                evolving faster than you can say X Æ A-12. Look no further though, MUNIMg provides you
+                                an insight
+                                into the profits of Ethereum, Litecoin, PolkaDot, DogeCoin, BitCoin, and many more. We
+                                create for
+                                you, a safe marketing space, where you can choose for yourself which periods to invest
+                                in. Worry not,
+                                we dabble with traditional markets as well. A profound analysis of the stock market
+                                helps you stay on
+                                top of your ‘stonks’ game. Get your own feel of being the Wolf of the Wall Street using
+                                MUNIMg’s Investment Portfolio.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card n-animated">
+                <img src="{% static 'main/media/med/news.jpg' %}" alt="Avatar" style="width:100%; height: 165px">
+                <div class="contain">
+                    <h4><b>News Aggregator</b></h4>
+                    <p>Newsflash! Ka-ching! Flash! Ever feel like your life is lacking drama?
+                        Come on over to the news aggregator which will tell you in a flash ‘Mai thi,
+                        tum thi, kaun tha?’. Get your own Ekta Kapoor feels when you see the latest
+                        market changing news and go ‘Kya! Kya! Kya!’. See in better and bold...</p>
+
+                    <br>
+                    <br>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal3"
+                        style="background-color: white; color:#3067f0; border-color: #3067f0; margin-bottom: 15px;">Read
+                        more</button>
+                    <br>
+
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal3" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">News Aggregator</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Newsflash! Ka-ching! Flash! Ever feel like your life is lacking drama?
+                                Come on over to the news aggregator which will tell you in a flash ‘Mai thi,
+                                tum thi, kaun tha?’. Get your own Ekta Kapoor feels when you see the latest
+                                market changing news and go ‘Kya! Kya! Kya!’. See in better and bold the trends
+                                in BSE’s Sensex and Nifty rather than squinting your eyes at the corner of your
+                                T.V. MUNIMg offers the luxury of a news stream which keeps you informed of the
+                                pulse of the world’s economic scene. Stay sharp, stay rich, stay on MUNIMg</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card n-animated">
+                <img src="{% static 'main/media/med/finance.jpg' %}" alt="Avatar" style="width:100%; height: 165px">
+                <div class="contain">
+                    <h4><b>Schemes, Precautions and Tips</b></h4>
+                    <p> The honorable government of India provides us with more schemes than the English Alphabet
+                        an provide letters for. Familiarize yourself with each of these and avail them at your
+                        liberty using the ‘Schemes’ tab at MUNIMg. We’ve all heard... </p>
+
+                    <br>
+                    <br>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal4"
+                        style="background-color: white; color:#3067f0; border-color: #3067f0; margin-bottom: 15px; ">Read
+                        more</button>
+
+
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal4" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Schemes, Precaution and Tips</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p> The honorable government of India provides us with more schemes than the English
+                                Alphabet
+                                can provide letters for. Familiarize yourself with each of these and avail them at your
+                                liberty using the ‘Schemes’ tab at MUNIMg. We’ve all heard (tried to) the sped up
+                                cautionary
+                                statement of ‘Investments are subject to market risks’, but it hardly profits us. MUNIMg
+                                sincerely cares about you, and thus lays out precautions for you to intimate yourself
+                                with,
+                                in a crystal-clear manner. There is an intrinsic wish we hold to see you ‘Excel’ in your
+                                economic life using our services, which is why we give to you our two cents on how you
+                                should
+                                go about dabbling with your hard-earned money. Come take a ‘scroll’ to see the wisdom
+                                propagated
+                                by your friendly neighborhood MUNIMg.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <footer class="w3-center  w3-padding-64  " style="background: linear-gradient(#00407f, #003162, #002347);">
+            <a href="#" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+            <div class="w3-xlarge w3-section" style="color: rgb(255, 255, 255);">
+                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+            </div>
+            <p style="color: rgb(255, 255, 255);">A website by CF04:Navrachana School Sama
+            </p>
+        </footer>
+
+
+</body>
+
+<script>
+    $(window).on('load', function () {
+        animateEle();
+    });
+
+    $(window).on('scroll', function () {
+        animateEle();
+    });
+
+    function animateEle() {
+        $('.n-animated').each(function () {
+            if (elementScrolled(this)) {
+                $(this).addClass('n-done');
+            }
+        });
+    }
+
+    function elementScrolled(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+        var elemTop = $(elem).offset().top;
+        return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
+    }
+</script>
+
+</html>

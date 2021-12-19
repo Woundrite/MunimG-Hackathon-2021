@@ -1,0 +1,127 @@
+{% load static %}
+<html>
+
+<head>
+        <link rel="stylesheet" type="text/css" href="{% static 'main/media/bootstrap.css' %}" !important>
+        <link rel="stylesheet" type="text/css" href="{% static 'main/font-awesome/css/font-awesome.css' %}">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+        <script src="{% static 'main/media/js/jquery.data-parallax.js' %}"> </script>
+        <script src="{% static 'main/media/js/scroller.js' %}"> </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>MUNIMg</title>
+</head>
+
+<body>
+    <template>
+        <div class="panel panel-primary  n-animated" style="border: 0px">
+            <div class="panel-heading" style="background-color: #356dfa"></div>
+            <div class="panel-body"><img src="" class="panelimg"></div>
+            <div class="readMore">Read More</div>
+        </div>
+    </template>
+    <div class="newsBuffer" style="display: none;">{{ news }}</div>
+    <div class="container">
+        <nav class="navbar navbar-fixed-top navbar-header" id="upscroll"
+            style="background-color: rgb(255, 255, 255); color: black ;">
+            <div class="container">
+                <div class="navbar-header colorlink">
+                    <a href="index.html" class="navbar-brand">
+                        <li><img src="med/logo.jpg" style="width:35%; padding:0px; margin: 0px;"></li>
+                    </a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/personal_finance/">Records</a></li>
+                    <li><a href="/precautions/">Portfolio</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Schemes</a></li>
+                    <li><a href="#">Advice</a></li>
+        
+        
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="signin.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+        
+            </div>
+        </nav>
+    </div>
+
+    <div class="webtitle w3-animate-opacity">
+        <div class="container">Financial News</div>
+    </div>
+
+
+
+    <div class="backcolor">
+        <br>
+        <br>
+        <div class="container newscontainer">
+        </div>
+    </div>
+
+    <footer class="w3-center  w3-padding-64  " style="background: linear-gradient(#00407f, #003162, #002347);">
+        <a href="#" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+        <div class="w3-xlarge w3-section" style="color: rgb(255, 255, 255);">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        <p style="color: rgb(255, 255, 255);">A website by CF04:Navrachana School Sama
+        </p>
+    </footer>
+
+</body>
+
+<script>
+    $(window).on('load', function () {
+        animateEle();
+    });
+
+    $(window).on('scroll', function () {
+        animateEle();
+    });
+
+    function animateEle() {
+        $('.n-animated').each(function () {
+            if (elementScrolled(this)) {
+                $(this).addClass('n-done');
+            }
+        });
+    }
+
+    function elementScrolled(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+        var elemTop = $(elem).offset().top;
+        return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
+    }
+    let j = document.querySelector(".newsBuffer").innerText.split("``");
+        let k = [];
+        let docfrag;
+        for (let i = 0; i <= j.length - 1; i++) {
+            k = j[i].split("~");
+            docfrag = document.getElementsByTagName("template")[0];
+            docfrag = docfrag.content.cloneNode(true);
+            docfrag.querySelector(".panel-heading").innerText = k[2];
+            docfrag.querySelector(".panel-body").innerHTML += k[3];
+            docfrag.querySelector(".panelimg").src = "url: " + k[4] + "<br>";
+            docfrag.querySelector(".readMore").setAttribute("href", k[4]);
+            document.querySelector(".newscontainer").appendChild(docfrag);
+            // var temp = document.getElementsByTagName("template")[0];
+            // var clon = temp.content.cloneNode(true);
+            // document.body.appendChild(clon);
+        }
+
+</script>

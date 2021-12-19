@@ -1,0 +1,287 @@
+{% load static %}
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/media/bootstrap.css' %}" !important>
+        <link rel="stylesheet" type="text/css" href="{% static 'main/font-awesome/css/font-awesome.css' %}">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+        <script src="{% static 'main/media/js/jquery.data-parallax.js' %}"> </script>
+        <script src="{% static 'main/media/js/scroller.js' %}"> </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>MUNIMg</title>
+</head>
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="{% static 'main/media/js/materialize.min.js' %}"></script>
+<style>
+    .colorlink {
+        color: rgb(43, 51, 43);
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+
+    .contain {
+        padding: 2px 16px;
+    }
+
+    .btn-hover {
+        background-color: "whitesmoke" !important;
+        opacity: 0.5;
+    }
+
+    .webtitle {
+        width: 100%;
+        height: 30%;
+        background-color: #0078c9;
+        display: inline-flex;
+        align-items: center;
+        justify-content: left;
+        text-align: left;
+        color: whitesmoke;
+        font-size: 40px;
+        font-weight: bold;
+        top: 60%;
+        padding: 20px;
+        padding-top: 60px;
+        background-image: url("{% static 'main/media/med/doodle.jpg' %}");
+        background-size: cover;
+    }
+
+    .exptable {
+        width: 50%;
+
+    }
+
+    .n-animated {
+        transform: translateY(50px);
+        opacity: 0;
+        transition: 1s;
+    }
+
+    .n-animated.n-done {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+
+        <nav class="navbar navbar-fixed-top navbar-header" id="upscroll"
+            style="background-color: rgb(255, 255, 255); color: black ;">
+            <div class="container">
+                <div class="navbar-header colorlink">
+                    <a href="/" class="navbar-brand"><img src="{% static 'main/media/med/M.png' %}"
+                            style="width:130%; padding:0px; margin: 0px; height:150%;">
+                    </a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/personal_finance/">Records</a></li>
+                    <li><a href="/schemes/">Schemes</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Schemes</a></li>
+                    <li><a href="#">Advice</a></li>
+        
+        
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/register/">Sign Up</a></li>
+                </ul>
+        
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="webtitle">
+        <div class="back" data-parallax='{"y":"40%"}'>
+
+        </div>
+
+        <div class="container">
+            Track Your Money
+        </div>
+    </div>
+    </div>
+
+
+    <div class="container">
+        <h2></h2>
+        <div class="exptable">
+            <form action="" method="post">
+                {% csrf_token %}
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Enter Expenditure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Transportation</td>
+                        <td><input type="number" id="n1" name="transport" style="border: white;"></td>
+                    </tr>
+                    <tr>
+                        <td>Clothing</td>
+                        <td><input type="number" id="n2" name="clothing" style="border: white;"></td>
+                    </tr>
+                    <tr>
+                        <td>Food</td>
+                        <td><input type="number" id="n3" name="food" style="border: white;"></td>
+                    </tr>
+                    <tr>
+                        <td>Electricity</td>
+                        <td><input type="number" id="n4" name="electricity" style="border: white;"></td>
+                    </tr>
+                    <tr>
+                        <td>Water</td>
+                        <td><input type="number" id="n5" name="water" style="border: white;"></td>
+                    </tr>
+                    <tr>
+                        <td>Rent</td>
+                        <td><input type="number" id="n6" name="rent" style="border: white;"></td>
+                    </tr>
+                    <tr>
+                        <td>Miscellaneous</td>
+                        <td><input type="number" id="n7" name="misc" style="border: white;"></td>
+                    </tr>
+                    <td>Total</td>
+                    <td><input type="number" id="total" style="border: white;" disabled value="{{ expense }}"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-primary" type="submit" id="cal">Calculate</button>
+            </form>
+        </div>
+        <canvas id="myChart" class="myChart" style="width:100%; margin-bottom: 5vh;"></canvas>
+    </div>
+    </div>
+    <canvas id="myChart1" class="myChart" style="width:100%; margin-bottom: 5vh;"></canvas>
+    <canvas id="myChart2" class="myChart" style="width:100%; margin-bottom: 5vh;"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script>
+        new Chart(document.getElementById("myChart1"), {
+            type: 'line',
+            data: {
+                labels: [1, 2],
+                datasets: [{
+                    data: [3478.05, {{ AMZN }}],
+                label: "Amazon",
+                borderColor: "#20fc8f",
+                fill: true
+            }, {
+            data: [154.30, {{ AAPL }}],
+            label: "Apple",
+            borderColor: "#5762d5",
+            fill: true
+                    }, {
+                data: [376.26, {{ FB }}],
+            label: "Face Book",
+            borderColor: "#95b8d1",
+            fill: true
+                    }, {
+                data: [2874.79, {{ GOOGL }}],
+            label: "Google",
+            borderColor: "#ff9505",
+            fill: true
+                    }, {
+                data: [733.57, {{ TSLA }}],
+            label: "Tesla",
+            borderColor: "#ab4967",
+            fill: true
+                    }]
+                },
+            options: {
+            title: {
+                display: true,
+                text: 'Monthly Expenditure'
+            }
+        }
+            });
+
+        new Chart(document.getElementById("myChart2"), {
+            type: 'line',
+            data: {
+                labels: [1, 2],
+                datasets: [{
+                    data: [1.27, {{ ADA }}],
+                label: "ADA",
+                borderColor: "#20fc8f",
+                fill: true
+            }, {
+            data: [49987.42, {{ BTC }}],
+            label: "BTC",
+            borderColor: "#5762d5",
+            fill: true
+                        }, {
+                data: [0.300228, {{ DOGE }}],
+            label: "DOGE",
+            borderColor: "#95b8d1",
+            fill: true
+                        }, {
+                data: [3898.41, {{ ETH }}],
+            label: "ETH",
+            borderColor: "#ff9505",
+            fill: true
+                        }]
+                    },
+            options: {
+            title: {
+                display: true,
+                text: 'Monthly Expenditure'
+            }
+        }
+            });
+    </script>
+
+    <footer class="w3-center  w3-padding-64  " style="background: linear-gradient(#00407f, #003162, #002347);">
+        <a href="#" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+        <div class="w3-xlarge w3-section" style="color: rgb(255, 255, 255);">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        <p style="color: rgb(255, 255, 255);">A website by CF04:Navrachana School Sama
+        </p>
+    </footer>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script>
+    let j = {{ expenseGraph }}
+    new Chart(document.getElementById("myChart"), {
+        type: 'line',
+        data: {
+            labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            datasets: [{
+                data: j,
+                label: "Expenses",
+                borderColor: "#3e95cd",
+                fill: true
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Monthly Expenditure'
+            }
+        }
+    });
+</script>
